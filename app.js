@@ -4,11 +4,7 @@
 
 
 /*-------------------------------- Variables --------------------------------*/
-
-const green = document.querySelector('#green')
-const red= document.querySelector('#red')
-const blue = document.querySelector('#blue')
-const yellow = document.querySelector('#yellow')
+const colorButtons = document.querySelectorAll('.colors')
 
 const start = document.querySelector('#start')
 const restart = document.querySelector('#restart')
@@ -20,85 +16,80 @@ let sequence = []
 let level = 0;
 
 let colorsArray = ['green' , 'red' , 'blue' , 'yellow']
-let currentIndex = colorsArray[0]
+let currentIndex = 0
 let colorOptions = []
+let playerChoices = colorOptions
 
 
 /*------------------------ Cached Element References ------------------------*/
-const play = document.querySelectorAll('#button')
-const sequences = document.querySelector('sequence')
+//const play = document.querySelectorAll('#button')
+//const sequences = document.querySelector('sequence')
 
 
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-green.addEventListener('click' , () => { 
+
+colorButtons.forEach(addEventListener('click' , (e) => {
+    console.log(e.target)
+}));
+
+
+
+/*
+green.addEventListener('click' , (e) => { 
+    console.log(e.target)
     });
-red.addEventListener('click' , () => {
+red.addEventListener('click' , (e) => {
+    console.log(e.target)
     });
-blue.addEventListener('click' , () => {
+blue.addEventListener('click' , (e) => {
     });
-yellow.addEventListener('click' , () => {
+yellow.addEventListener('click' , (e) => {
     });
     
 restart.addEventListener('click' , () => {
     })
-
+*/
 
 
 
 
 /*-------------------------------- Functions --------------------------------*/
 
-const startGame = () => { 
-        let randomIndex = [Math.floor(Math.random() * colorsArray.length)]
-        const color = colorsArray[randomIndex]
-      console.log(color)
-        colorOptions.push(color)
+const randomColor = () => {
+    let randomIndex = [Math.floor(Math.random() * colorsArray.length)]
+    const color = colorsArray[randomIndex]
+    console.log(color)
+    colorOptions.push(color)
 }
 
+const startGame = () => { 
+      randomColor()
+}
 start.addEventListener('click' , startGame)
 
 
+const handleColorChoice = (event) => {
+    const currentColor = event.target.id
 
+    for (let i = 0; i < colorButtons.length; i++) {
+        colorButtons[i].addEventListener('click', handleColorChoice)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --------------------------DEAD CODE---------------------------------------*/
-/*function nextRound() {
-    level += 1; 
-}
+    if (currentColor === colorOptions[currentIndex]) {
+        currentIndex += 1; 
+    
+    if (currentIndex < colorOptions.length )
+        if(currentIndex === colorOptions.length)
+    randomColor()
+        }
+    }
 }
 
 
-sequence.forEach(function (button) {
-    button.addEventListener('click' , start)
-})
-*/
 
 
-// for (let i = 0; i < colorsArray.length; i++) {
+
+
+
+//playerChoice.addEventListener('click' , )
