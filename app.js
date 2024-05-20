@@ -19,6 +19,11 @@ let loser = false
 let sequence = []
 let level = 0;
 
+let colorsArray = ['green' , 'red' , 'blue' , 'yellow']
+let currentIndex = colorsArray[0]
+let colorOptions = []
+
+
 /*------------------------ Cached Element References ------------------------*/
 const play = document.querySelectorAll('#button')
 const sequences = document.querySelector('sequence')
@@ -26,32 +31,18 @@ const sequences = document.querySelector('sequence')
 
 
 
-
-
 /*----------------------------- Event Listeners -----------------------------*/
 green.addEventListener('click' , () => { 
-
-});
-
+    });
 red.addEventListener('click' , () => {
-  
-});
-
+    });
 blue.addEventListener('click' , () => {
-    
-});
-
+    });
 yellow.addEventListener('click' , () => {
-   
-});
-
-start.addEventListener('click' , () => { 
-   
-})
-
-restart.addEventListener('click' , () => {
+    });
     
-})
+restart.addEventListener('click' , () => {
+    })
 
 
 
@@ -59,19 +50,55 @@ restart.addEventListener('click' , () => {
 
 /*-------------------------------- Functions --------------------------------*/
 
-startGame = (startBtn) => { startBtn.addEventListener('click' , startGame)
-console.log('hi')
+const startGame = () => { 
+        let randomIndex = [Math.floor(Math.random() * colorsArray.length)]
+        const color = colorsArray[randomIndex]
+      console.log(color)
+        colorOptions.push(color)
 }
 
-//function start () {
-    
-    
-//}
+start.addEventListener('click' , startGame)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------DEAD CODE---------------------------------------*/
+/*function nextRound() {
+    level += 1; 
+}
+}
+
 
 sequence.forEach(function (button) {
     button.addEventListener('click' , start)
 })
+*/
 
-function nextRound() {
-    level += 1; 
-}
+
+// for (let i = 0; i < colorsArray.length; i++) {

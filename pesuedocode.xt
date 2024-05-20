@@ -1,6 +1,16 @@
 
 /*----------------------Pesuedocode---------------------------------*/
-
+make an arrary to store order of colors shown
+make a variable to keep track of current index colors arrary
+when start
+    - select a color at random and push into the colors arrary
+    - wait for the user to press a button
+    - check and see if button pressed matches the next button in the sequence 
+    - if button user presses matches the current index of the colors array, check and see if three are any colors left in the array 
+    - if there are no colors left go back to step 1
+    - if there are colors left. go back to step 2
+    - if they do not match you loooose. 
+    
 1.) (x) Title page - Landing page with instructions on how to play the game. 
 
 2. ) (x) Click button for user to start the game with message "good luck" 
