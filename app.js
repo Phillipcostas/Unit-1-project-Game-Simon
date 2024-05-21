@@ -36,25 +36,6 @@ colorButtons.forEach(addEventListener('click' , (e) => {
 
 
 
-/*
-green.addEventListener('click' , (e) => { 
-    console.log(e.target)
-    });
-red.addEventListener('click' , (e) => {
-    console.log(e.target)
-    });
-blue.addEventListener('click' , (e) => {
-    });
-yellow.addEventListener('click' , (e) => {
-    });
-    
-restart.addEventListener('click' , () => {
-    })
-*/
-
-
-
-
 /*-------------------------------- Functions --------------------------------*/
 
 const randomColor = () => {
