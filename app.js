@@ -17,7 +17,7 @@ let colorsArray = ['green' , 'red' , 'blue' , 'yellow']
 let currentIndex = 0
 let colorOptions = []
 let playerChoices = colorOptions
-let currentColor = playerChoices 
+let currentColor = colorOptions
 
 
 
@@ -47,24 +47,28 @@ const randomColor = () => {
     console.log(color)
 }
 
-
 const handleColorChoice = (event) => {
     const currentColor = event.target.id
-   
+    console.log(`'playerChoice' ${playerChoices}`)
+ 
     if (currentColor === colorOptions[currentIndex]) {
-        console.log('color match')
+        console.log(`'color match' ${currentColor}`)
+        // currentIndex = currentIndex.length = 0
         currentIndex += 1; 
+        
         console.log(currentIndex)
-    if (currentIndex === colorOptions.length || (currentIndex < colorOptions.length ))
+    if (currentIndex === colorOptions.length) {
         randomColor()
         currentIndex = 0
-      
+    }
+       
     } else { 
         console.log('color not a match')
         loser = true 
             return console.log("You lose! :-(")
     }
 }
+
     
 
 const startGame = () => { 
