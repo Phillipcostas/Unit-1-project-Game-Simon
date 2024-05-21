@@ -100,6 +100,11 @@ for (let i = 0; i < colorButtons.length; i++) {
 
 7.) 
 
+need level to render on html page 
+colors to light up on html page 
+high score initals meed to be entered - how to store that info 
+timing of the display of the lights that are generated at random by computer 
+
 
 
 
