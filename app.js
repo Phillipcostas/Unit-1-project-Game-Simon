@@ -23,6 +23,8 @@ let currentIndex = 0
 let colorOptions = []
 let playerChoices = colorOptions
 let currentColor = colorOptions
+let clearColor = '#00000000'
+
 
 
 
@@ -48,9 +50,10 @@ const randomColor = () => {
     colorOptions.push(color)
     console.log(color)
     setTimeout(colorTimer, 1000)
+    setTimeout(colorClear, 1500)
     
-}
 
+}
 
 const handleColorChoice = (event) => {
     const currentColor = event.target.id
@@ -74,7 +77,6 @@ const handleColorChoice = (event) => {
         console.log('color not a match')
         loser = true
         return console.log("You lose! :-(")
-        
     }
     
 }
@@ -102,7 +104,13 @@ restart.addEventListener('click' , startGame);
 const colorTimer = () => {
     colorDisplay.style.background = colorOptions ; 
     setTimeout(colorDisplay.textContent, 1000)
-    clearTimeout(colorDisplay)
+    //clearTimeout(colorDisplay, null) 
     
+}
+
+const colorClear = () => {
+    colorDisplay.style.background = clearColor; 
+    setTimeout(colorDisplay.textContent, 1000)
+
 }
 
