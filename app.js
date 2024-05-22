@@ -50,7 +50,7 @@ const randomColor = () => {
     colorOptions.push(color)
     console.log(color)
     setTimeout(colorTimer, 1000)
-    setTimeout(colorClear, 1500)
+    setTimeout(colorClear, 2000)
     
 
 }
@@ -104,8 +104,11 @@ restart.addEventListener('click' , startGame);
 const colorTimer = () => {
     colorDisplay.style.background = colorOptions ; 
     setTimeout(colorDisplay.textContent, 1000)
-    //clearTimeout(colorDisplay, null) 
-    
+
+for (let i = 0; colorOptions.length > i; i++) {
+        colorDisplay.style.background = colorOptions[i];
+        setTimeout(colorDisplay.textContent, 1000)
+    }
 }
 
 const colorClear = () => {
