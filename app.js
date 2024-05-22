@@ -21,8 +21,8 @@ let level = document.getElementById('level')
 let colorsArray = ['green', 'red', 'blue', 'yellow']
 let currentIndex = 0
 let colorOptions = []
-let playerChoices = colorOptions
-let currentColor = colorOptions
+let playerChoices = [] // colorOptions
+let currentColor = 0 // colorOptions
 let clearColor = '#00000000'
 
 
@@ -45,14 +45,12 @@ const play = document.querySelectorAll('#button')
 /*-------------------------------- Functions --------------------------------*/
 
 const randomColor = () => {
-    let randomIndex = [Math.floor(Math.random() * colorsArray.length)]
+    let randomIndex = Math.floor(Math.random() * colorsArray.length)
     const color = colorsArray[randomIndex]
     colorOptions.push(color)
     console.log(color)
-    setTimeout(colorTimer, 1000)
-    setTimeout(colorClear, 2000)
-    
-
+    setTimeout(colorTimer, 500)
+    // setTimeout(colorClear, 2000)
 }
 
 const handleColorChoice = (event) => {
@@ -100,20 +98,52 @@ for (let i = 0; i < colorButtons.length; i++) {
 tryAgain()
 restart.addEventListener('click' , startGame);
 
+const colorTimer = () => {
+    for (let i = 0; i < colorOptions.length; i++) {
+        setTimeout(() => {
+            colorDisplay.style.background = colorOptions[i];
+        }, i * 750); 
+    }
 
+    setTimeout(colorClear, colorOptions.length * 750 + 500)
+};
+
+const colorClear = () => {
+       colorDisplay.style.background = clearColor; 
+    //    setTimeout(colorDisplay.textContent, 1000)  
+}
+
+colorTimer();
+colorClear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const colorTimer = () => {
     colorDisplay.style.background = colorOptions ; 
-    setTimeout(colorDisplay.textContent, 1000)
+    setTimeout(colorDisplay.textContent, 500)
 
 for (let i = 0; colorOptions.length > i; i++) {
+        colorDisplay.style.background = colorOptions[i];
+        setTimeout(colorDisplay.textContent, 500)
+    } 
+for (i = 0; colorOptions.length >= i; i++) {
         colorDisplay.style.background = colorOptions[i];
         setTimeout(colorDisplay.textContent, 1000)
     }
 }
-
-const colorClear = () => {
-    colorDisplay.style.background = clearColor; 
-    setTimeout(colorDisplay.textContent, 1000)
-
-}
-
+*/
