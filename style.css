@@ -1,0 +1,67 @@
+html {
+    background: #000428;
+     background: linear-gradient(200deg, #004e92, #000428);
+     background: linear-gradient(200deg, #004e92, #000428);
+     height: 100%;
+
+}
+
+h1, h2, h3{
+    color: white;
+    text-align: center;
+}
+.colordisplay {
+    height: 200px;
+    width: 200px; 
+
+    
+}
+
+
+.simon {
+    position: relative;
+    border-radius: 50%;
+    margin: 10vh auto;
+    padding: 30px;
+    width: 80vh;
+    max-width: 400px;
+    height: 80vh;
+    max-height: 400px;
+    background: #2c2139;
+    background: rgba(0,0,0,0.2);
+    font-size: initial;
+    -webkit-box-shadow: 0 0 30px 0 rgba(255,255,255,0.5);
+    -moz-box-shadow: 0 0 30px 0 rgba(255,255,255,0.5);
+    box-shadow: 0 0 30px 0 rgba(255,255,255,0.5);
+}
+
+#green {
+    color: white;
+    background-color: green;
+}
+
+#blue {
+color: white;
+background-color: blue;
+}
+
+#red {
+    color: white;
+    background-color: red;
+}
+
+#yellow {
+    color: black;
+    background-color: yellow;
+}
+
+#level {
+    text-align: center;
+    color: white;
+}
+
+ol , .high{
+    color: white;
+    text-align: center;
+}
+
