@@ -1,3 +1,10 @@
+@media only screen and (max-width: 768px) {
+   
+    [class*="row-"] {
+      width: 100%;
+    }
+  }
+
 html {
     background: #000428;
      background: linear-gradient(200deg, #004e92, #01073f);
@@ -5,7 +12,9 @@ html {
      height: 160%;
      width: 100%;
 
-}
+
+    }
+
 
 .header {
     display: flex;

@@ -84,9 +84,7 @@ const startGame = () => {
 
 }
 const updateHighScore = () => {
-    // console.log('kutfitfuyifuyt', currentIndex, 'high scofe:', highScore)
     if (maxIndex > highScore) {
-        console.log('jyrdjgfvjhgvi')
         highScore = maxIndex;
         console.log(highScore)
         localStorage.setItem("highScore", highScore);
@@ -94,8 +92,8 @@ const updateHighScore = () => {
         localStorage.setItem('highScores', JSON.stringify(highScores));
         document.getElementById(gameOver, "highScores")
     }
-};
-
+    localStorage.getItem = ('highscore')
+}
 
 start.addEventListener('click', startGame)
 
@@ -122,8 +120,6 @@ const colorClear = () => {
 colorTimer();
 colorClear()
 
-
-
 const button = document.getElementById("start");
     function hideButton() {
     button.style.display = "none";
@@ -139,6 +135,7 @@ const gameOver = () => {
         currentColor = 0
         colorOptions = []
         levels.innerText = `Level: 1`
+        start.textContent = "Game Over!, Try Again?"
     }
     showButton("Game Over!! Try Again");
 }
