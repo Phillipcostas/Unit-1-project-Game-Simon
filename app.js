@@ -12,6 +12,7 @@ const restart = document.querySelector('#restart')
 const levels = document.querySelector('#level')
 
 let highScore = false
+let highScores = []
 let loser = false
 
 let level = document.getElementById('level')
@@ -50,14 +51,11 @@ const randomColor = () => {
     colorOptions.push(color)
     console.log(color)
     setTimeout(colorTimer, 500)
-    // setTimeout(colorClear, 2000)
 }
 
 const handleColorChoice = (event) => {
     const currentColor = event.target.id
     console.log(`'playerChoice' ${playerChoices}`)
-    //event.target.style.background = "red"
-    //div.style.background = colorOptions 
 
 
     if (currentColor === colorOptions[currentIndex]) {
@@ -104,46 +102,13 @@ const colorTimer = () => {
             colorDisplay.style.background = colorOptions[i];
         }, i * 750); 
     }
-
     setTimeout(colorClear, colorOptions.length * 750 + 500)
 };
 
 const colorClear = () => {
        colorDisplay.style.background = clearColor; 
-    //    setTimeout(colorDisplay.textContent, 1000)  
 }
 
 colorTimer();
 colorClear()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const colorTimer = () => {
-    colorDisplay.style.background = colorOptions ; 
-    setTimeout(colorDisplay.textContent, 500)
-
-for (let i = 0; colorOptions.length > i; i++) {
-        colorDisplay.style.background = colorOptions[i];
-        setTimeout(colorDisplay.textContent, 500)
-    } 
-for (i = 0; colorOptions.length >= i; i++) {
-        colorDisplay.style.background = colorOptions[i];
-        setTimeout(colorDisplay.textContent, 1000)
-    }
-}
-*/
