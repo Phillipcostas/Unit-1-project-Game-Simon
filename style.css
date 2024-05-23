@@ -2,20 +2,213 @@ html {
     background: #000428;
      background: linear-gradient(200deg, #004e92, #01073f);
      background: linear-gradient(200deg, #004e92, #01073f);
-     height: 100%;
+     height: 150%;
      width: 100%;
 
+}
+#level {
+    font-size: 50px;
 }
 
 .header {
     display: flex;
-    align-content: center;
+    justify-content: center; 
+    align-items: center; 
     position: relative;
     color: white;
     flex-wrap: wrap;
+}
+
+.color {
+    display: flex;
+    html {
+        background: #000428;
+         background: linear-gradient(200deg, #004e92, #01073f);
+         background: linear-gradient(200deg, #004e92, #01073f);
+         height: 150%;
+         width: 100%;
+    
+    }
+    #level {
+        font-size: 50px;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        position: relative;
+        color: white;
+        flex-wrap: wrap;
+    }
+    
+    .color {
+        display: flex;
+        position: absolute;
+        top: 80%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 80px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+    
+    #green {
+        background-color: green;
+        color: white;
+        transform: rotate(45deg) translate(70px) rotate(-45deg);
+        border-radius: 20px 20px 320px 20px;
+    }
+    
+    #blue {
+        background-color: blue;
+        color: white;
+        transform: rotate(135deg) translate(70px) rotate(-135deg);
+        border-radius:20px 20px 20px 320px;
+        
+    }
+    
+    #red {
+        background-color: red;
+        color: white;
+        transform: rotate(225deg) translate(70px) rotate(-225deg);
+        border-radius:320px 20px 20px;
+    }
+    
+    #yellow {
+        background-color: yellow;
+        color: black;
+        transform: rotate(315deg) translate(70px) rotate(-315deg);
+        border-radius: 20px 320px 20px 20px;
+    }
+    .simon-background {
+        position: relative;
+        border-radius: 50%;
+        margin: 10vh auto;
+        padding: 30px;
+        width: 80vh;
+        max-width: 400px;
+        height: 90vh;
+        max-height: 400px;
+        background: #2c2139;
+        background: rgba(0, 0, 0, 0.2);
+        font-size: initial;
+        box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+    }
+    
+    .game-start{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+       gap: 30px 30px;
+    
+    }
+    
+    #start {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px; 
+        height: 50px; 
+        background-color: #007bff; 
+        color: #fff; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #restart {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px; 
+        height: 50px; 
+        background-color: #007bff; 
+        color: #fff; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .colordisplay {
+        width: 150px;
+        height: 150px;
+        background-color: black;
+        border-radius: 50%;
+        margin: 50px auto;
+    }
+    
+    
+    .high {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        position: relative;
+        color: white;
+        flex-wrap: wrap;
+        font-size: 25px;
+        margin-left: -200px;
+    }
+    position: absolute;
+    top: 80%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
     
 }
 
+#green {
+    background-color: green;
+    color: white;
+    transform: rotate(45deg) translate(70px) rotate(-45deg);
+    border-radius: 20px 20px 320px 20px;
+}
+
+#blue {
+    background-color: blue;
+    color: white;
+    transform: rotate(135deg) translate(70px) rotate(-135deg);
+    border-radius:20px 20px 20px 320px;
+    
+}
+
+#red {
+    background-color: red;
+    color: white;
+    transform: rotate(225deg) translate(70px) rotate(-225deg);
+    border-radius:320px 20px 20px;
+}
+
+#yellow {
+    background-color: yellow;
+    color: black;
+    transform: rotate(315deg) translate(70px) rotate(-315deg);
+    border-radius: 20px 320px 20px 20px;
+}
 .simon-background {
     position: relative;
     border-radius: 50%;
@@ -26,11 +219,38 @@ html {
     height: 90vh;
     max-height: 400px;
     background: #2c2139;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     font-size: initial;
-    box-shadow: 0 0 30px 0 rgba(255,255,255,0.5);
+    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
 }
+
+.game-start{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+   gap: 30px 30px;
+
+}
+
 #start {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px; 
+    height: 50px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -52,33 +272,14 @@ html {
     margin: 50px auto;
 }
 
-.color {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 80px;
-}
 
-#green {
-    background-color: green;
-    transform: rotate(45deg) translate(70px) rotate(-45deg);
+.high {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    color: white;
+    flex-wrap: wrap;
+    font-size: 25px;
+    margin-left: -200px;
 }
-
-#blue {
-    background-color: blue;
-    transform: rotate(135deg) translate(70px) rotate(-135deg);
-}
-
-#red {
-    background-color: red;
-    transform: rotate(225deg) translate(70px) rotate(-225deg);
-}
-
-#yellow {
-    background-color: yellow;
-    transform: rotate(315deg) translate(70px) rotate(-315deg);
-}
-

@@ -11,13 +11,13 @@ const start = document.querySelector('#start')
 const restart = document.querySelector('#restart')
 const levels = document.querySelector('#level')
 
-let highScore = false
-let highScores = []
+let highScore = 0
+let highScores = ['1' , '2' , '3']
 let loser = false
 
-let level = document.getElementById('level')
-
-
+document.getElementById("restart").addEventListener("click", function hidebutton() {
+    this.style.display = "none";
+  });
 
 let colorsArray = ['green', 'red', 'blue', 'yellow']
 let currentIndex = 0
@@ -51,6 +51,7 @@ const randomColor = () => {
     colorOptions.push(color)
     console.log(color)
     setTimeout(colorTimer, 500)
+    hideButton()
 }
 
 const handleColorChoice = (event) => {
@@ -61,8 +62,7 @@ const handleColorChoice = (event) => {
     if (currentColor === colorOptions[currentIndex]) {
         console.log(`'color match' ${currentColor}`)
         currentIndex += 1;
-        level.innerText = `level: ${currentIndex +1}`
-        //console.log(level)
+        levels.innerText = `level: ${currentIndex +1}`
 
         console.log(currentIndex)
         if (currentIndex === colorOptions.length) {
@@ -72,29 +72,47 @@ const handleColorChoice = (event) => {
     } else {
         console.log('color not a match')
         loser = true
-        return console.log("You lose! :-(")
+        gameOver ()
+        return ("Game Over! Try Again?")
     }
     
 }
 const tryAgain = () => {
-
+    currentIndex = 0 
+    currentColor = 0
+    colorOptions = []
+    levels.innerText = `Level: 1`   
 }
 
 const startGame = () => {
     currentIndex = 0 
     currentColor = 0
     colorOptions = []
-    level.innerText = `Level: 1`
+    levels.innerText = `Level: 1`
     randomColor()
+    hideButton()
+
 }
+const updateHighScore = () => {
+    if (currentIndex > highScore) {
+        highScore = currentIndex;
+        console.log(highScore)
+        localStorage.setItem("highScore", highScore);
+        highScores.push(highScore);
+        localStorage.setItem('highScores', JSON.stringify(highScores));
+    }
+};
+
 
 start.addEventListener('click', startGame)
+restart.addEventListener('click', startGame);
+
 for (let i = 0; i < colorButtons.length; i++) {
     colorButtons[i].addEventListener('click', handleColorChoice)
 }
 
 tryAgain()
-restart.addEventListener('click' , startGame);
+
 
 const colorTimer = () => {
     for (let i = 0; i < colorOptions.length; i++) {
@@ -112,3 +130,26 @@ const colorClear = () => {
 colorTimer();
 colorClear()
 
+
+
+const button = document.getElementById("restart");
+    function hideButton() {
+    button.style.display = "none";
+    }
+    function showButton() {
+    button.style.display = "block"; 
+}   
+const gameOver = () => {
+    if (loser) { 
+        updateHighScore()
+        loser = true 
+        currentIndex = 0 
+        currentColor = 0
+        colorOptions = []
+        levels.innerText = `Level: 1`
+        
+    }
+    showButton();
+}
+    button.addEventListener("click", hideButton);
+gameOver() 
