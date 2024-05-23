@@ -2,12 +2,9 @@ html {
     background: #000428;
      background: linear-gradient(200deg, #004e92, #01073f);
      background: linear-gradient(200deg, #004e92, #01073f);
-     height: 150%;
+     height: 160%;
      width: 100%;
 
-}
-#level {
-    font-size: 50px;
 }
 
 .header {
@@ -19,196 +16,103 @@ html {
     flex-wrap: wrap;
 }
 
-.color {
-    display: flex;
-    html {
-        background: #000428;
-         background: linear-gradient(200deg, #004e92, #01073f);
-         background: linear-gradient(200deg, #004e92, #01073f);
-         height: 150%;
-         width: 100%;
-    
-    }
-    #level {
-        font-size: 50px;
-    }
-    
-    .header {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        position: relative;
-        color: white;
-        flex-wrap: wrap;
-    }
-    
-    .color {
-        display: flex;
-        position: absolute;
-        top: 80%;
-        left: 45%;
-        transform: translate(-50%, -50%);
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
-        cursor: pointer;
-        text-align: center;
-        line-height: 80px;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        
-    }
-    
-    #green {
-        background-color: green;
-        color: white;
-        transform: rotate(45deg) translate(70px) rotate(-45deg);
-        border-radius: 20px 20px 320px 20px;
-    }
-    
-    #blue {
-        background-color: blue;
-        color: white;
-        transform: rotate(135deg) translate(70px) rotate(-135deg);
-        border-radius:20px 20px 20px 320px;
-        
-    }
-    
-    #red {
-        background-color: red;
-        color: white;
-        transform: rotate(225deg) translate(70px) rotate(-225deg);
-        border-radius:320px 20px 20px;
-    }
-    
-    #yellow {
-        background-color: yellow;
-        color: black;
-        transform: rotate(315deg) translate(70px) rotate(-315deg);
-        border-radius: 20px 320px 20px 20px;
-    }
-    .simon-background {
-        position: relative;
-        border-radius: 50%;
-        margin: 10vh auto;
-        padding: 30px;
-        width: 80vh;
-        max-width: 400px;
-        height: 90vh;
-        max-height: 400px;
-        background: #2c2139;
-        background: rgba(0, 0, 0, 0.2);
-        font-size: initial;
-        box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: -1;
-    }
-    
-    .game-start{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-       gap: 30px 30px;
-    
-    }
-    
-    #start {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px; 
-        height: 50px; 
-        background-color: #007bff; 
-        color: #fff; 
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    #restart {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px; 
-        height: 50px; 
-        background-color: #007bff; 
-        color: #fff; 
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    .colordisplay {
-        width: 150px;
-        height: 150px;
-        background-color: black;
-        border-radius: 50%;
-        margin: 50px auto;
-    }
-    
-    
-    .high {
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-        position: relative;
-        color: white;
-        flex-wrap: wrap;
-        font-size: 25px;
-        margin-left: -200px;
-    }
-    position: absolute;
-    top: 80%;
-    left: 42%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 80px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  
-    
+#level {
+    font-size: 50px;
 }
+
+
+.color-container {
+
+    position: relative;
+    border-radius: 50%;
+    margin: 10vh auto;
+    padding: 30px;
+    width: 80vh;
+    max-width: 400px;
+    height: 90vh;
+    max-height: 400px;
+    background: #2c2139;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: initial;
+    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+
 
 #green {
     background-color: green;
     color: white;
-    transform: rotate(45deg) translate(70px) rotate(-45deg);
-    border-radius: 20px 20px 320px 20px;
+        border-radius: 20px 20px 320px 20px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 130px;
+        font-size: 20px;
+        padding-left: 5px; 
+        padding-right: 10px;
 }
+#green:active {
+    background-color: green;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 
 #blue {
     background-color: blue;
     color: white;
-    transform: rotate(135deg) translate(70px) rotate(-135deg);
     border-radius:20px 20px 20px 320px;
-    
+    width: 200px;
+    height: 200px;
+    line-height: 130px;
+    font-size: 20px;
+    padding-left: 20px;
+ 
 }
+#blue:active {
+    background-color: blue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 
 #red {
     background-color: red;
     color: white;
-    transform: rotate(225deg) translate(70px) rotate(-225deg);
     border-radius:320px 20px 20px;
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-top: 40px;;
+    line-height: 130px;
 }
+#red:active {
+    background-color: red;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 
 #yellow {
     background-color: yellow;
     color: black;
-    transform: rotate(315deg) translate(70px) rotate(-315deg);
     border-radius: 20px 320px 20px 20px;
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+    line-height: 230px;
+    padding-left: 5px;
 }
+#yellow:active {
+    background-color: yellow;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+
 .simon-background {
     position: relative;
     border-radius: 50%;
@@ -225,14 +129,14 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
 }
+
 
 .game-start{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-   gap: 30px 30px;
+    gap: 30px 30px;
 
 }
 
@@ -241,13 +145,14 @@ html {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px; 
-    height: 50px; 
+    width: 200px; 
+    height: 100px; 
     background-color: #007bff; 
     color: #fff; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 50px;
 }
 
 #restart {
@@ -279,7 +184,14 @@ html {
     align-items: center; 
     position: relative;
     color: white;
-    flex-wrap: wrap;
+    flex-direction: column;
     font-size: 25px;
-    margin-left: -200px;
+    margin-left: -150px;
+    padding-left: 150px;
+}
+
+.Phillip {
+    text-align: right;
+    color: White;
+    font-size: 20px;
 }
