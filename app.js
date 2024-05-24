@@ -1,6 +1,5 @@
 const colorButtons = document.querySelectorAll('.color')
 const colorDisplay = document.querySelector('.colordisplay')
-
 const start = document.querySelector('#start') 
 const levels = document.querySelector('#level')
 
